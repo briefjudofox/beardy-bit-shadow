@@ -1,0 +1,41 @@
+<!-- Thanks: https://twitter.com/vinceallenvince
+     https://github.com/foldi/Bit-Shadow-Press
+     https://github.com/foldi/Bit-Shadow-Machine -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Losing My Beard with Bit Shadow</title>
+    <link rel='stylesheet' href='css/main.css' />
+    <script src='scripts/BitShadowMachine.min.js'></script>
+    <script src='beardy-frames.js'></script>
+</head>
+<body>
+<div id='worldA'></div>
+<script type="text/javascript">
+
+    var worldA = new BitShadowMachine.World(document.getElementById('worldA'), {
+        width: 875,
+        height: 533,
+        resolution: 8,
+        colorMode: 'rgba',
+        noMenu: true
+    });
+
+    /**
+     * Create a new BitShadowMachine system.
+     */
+    BitShadowMachine.System.init(function() {
+
+        this.add('Anim', {
+            location: new BitShadowMachine.Vector(10, 10),
+            frames: frames,
+            frameDuration: 3
+        });
+
+    }, worldA);
+
+</script>
+
+</body>
+</html>
